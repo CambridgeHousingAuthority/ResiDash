@@ -1,0 +1,25 @@
+class AssignedWorker < ActiveRecord::Base
+    self.table_name = 'AssignedWorker'
+    self.primary_key = :AssignedWorkerID
+
+    has_many :agencylinks, :class_name => 'AgencyLink'    
+    has_many :unitevents, :class_name => 'UnitEvent'    
+    has_many :participantevents, :class_name => 'ParticipantEvent'    
+    has_many :waitinglistapplicantstatuses, :class_name => 'WaitingListApplicantStatus'    
+    has_many :hapuapregisters, :class_name => 'HapUapRegister'    
+    has_many :certifications, :class_name => 'Certification'    
+    has_many :units, :class_name => 'Unit'    
+    has_many :applicantwaitinglists, :class_name => 'ApplicantWaitingList'    
+    has_many :certifications, :class_name => 'Certification'    
+    has_many :currentunitfamilies, :class_name => 'CurrentUnitFamily'    
+    has_many :currentunitfamilies, :class_name => 'CurrentUnitFamily'    
+    has_many :families, :class_name => 'Family'    
+    has_many :historicalunitfamilies, :class_name => 'HistoricalUnitFamily'    
+    has_many :historicalunitfamilies, :class_name => 'HistoricalUnitFamily'    
+    has_many :inspectionactivities, :class_name => 'InspectionActivity'    
+    has_many :inspectionactivities, :class_name => 'InspectionActivity'    
+    has_many :commitmentactivities, :class_name => 'CommitmentActivity'    
+    has_many :commitmentlineitems, :class_name => 'CommitmentLineItem'    
+    has_many :invoiceactivities, :class_name => 'InvoiceActivity'    
+    has_many :invoicelineitems, :class_name => 'InvoiceLineItem'    
+end
