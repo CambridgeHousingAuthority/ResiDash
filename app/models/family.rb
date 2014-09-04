@@ -17,16 +17,12 @@ class Family < ActiveRecord::Base
     has_many :inspections, :class_name => 'Inspection', :foreign_key => :fkFamily  
     has_many :workorders, :class_name => 'WorkOrder', :foreign_key => :fkFamily
 
+    scope :housed, -> { where("IsCurrentlyHoused" => true) }
+    scope :section_8, -> { where(program: "Section 8" || "Section 8 State") }
+    scope :public_housing, -> { where(program: "Low Income Public Housing" || "Low Income State") }
+
     def self.program_types
         Family.uniq.pluck(:program)
-    end
-
-    def self.voucher_holders
-        Family.where(program: "Section 8" || "Section 8 State")
-    end
-
-    def self.public_housing
-        Family.where(program: "Low Income Public Housing" || "Low Income State")
     end
 
     def self.waiting_list
